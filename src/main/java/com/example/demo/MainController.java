@@ -32,6 +32,10 @@ public class MainController {
         ITesseract instance = new Tesseract();
         try
         {
+            instance.setDatapath("src/main/resources");
+            instance.setLanguage("rus");
+            instance.setPageSegMode(1);
+            instance.setOcrEngineMode(1);
             String imgText = instance.doOCR(file);
             return imgText;
         }
