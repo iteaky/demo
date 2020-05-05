@@ -21,7 +21,7 @@ import java.nio.file.Paths;
 @RestController
 public class MainController {
 
-    @PostMapping(headers ={"content-type=multipart/form-data"})
+    @PostMapping(path = "/parse", headers ={"content-type=multipart/form-data"}, consumes = "multipart/form-data")
     public String parseImage(@RequestParam("file") MultipartFile file) throws IOException {
         System.out.println(file);
         BufferedImage bImageFromConvert = ImageIO.read(file.getInputStream());
